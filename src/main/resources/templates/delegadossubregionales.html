@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div class="container" th:switch="${regions.isEmpty()}">
+    <div class="row">
+        <h2 th:case="true" th:text="#{text.nosub}"></h2>
+        <div th:case="*">
+            <h1 th:text="#{text.subregiones}"></h1>
+            <table id="table-dels" class="table table-striped table-responsive-md" th:each="r : ${regions}">
+                <thead>
+                    <tr>
+                        <td>
+                            <h3 th:text="${r.name}"></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a id="vSubD" th:href="@{delegadossubregionales/{sId}(sId = ${r.id})}" th:inline="text">[[#{text.verdelegados}]] <i class="fas fa-caret-down text-dark"></i></a>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

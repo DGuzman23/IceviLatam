@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+    <div tabindex="0" class="container">
+        <h1 th:text="#{label.Aliados}"></h1>
+        <!--Primera fila de cards-->
+        <div class="card-deck">
+            <div class="card">
+                <div id="icevig" class="card-body">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal1" title="Información aliado">
+                        <img class="img-fluid" th:src="@{/img/logoICEVIglobal.png}" th:alt="#{text.alia1-img}" width="350" height="225">
+                    </a>
+                    <div class="modal fade" id="myModal1">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.alia1}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                        <h2 th:text="#{text.alia1}"></h2>
+                                        <p style="text-align: justify" th:text="#{text.alia1-des}"></p>
+                                        <p th:inline="text">[[#{text.aliados-sitio-web}]] <a href="https://icevi.org/">icevi.org</a></p>
+                                        <p>Email: ceo201922@gmail.com</p>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" >
+                <div id="ulac" class="card-body">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal2" title="Información aliado">
+                        <img style="margin-top:10px" class="img-fluid" th:src="@{/img/LogoULAC.png}" th:alt="#{text.alia2-img}" width="350" height="225">
+                    </a>
+                    <div class="modal fade" id="myModal2">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.alia2}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <h2 th:text="#{text.alia2}"></h2>
+                                    <p style="text-align: justify" th:text="#{text.alia2-des}"></p>
+                                    <p th:inline="text">[[#{text.aliados-sitio-web}]] <a href="http://www.ulacdigital.org">ulacdigital.org</a> </p>
+                                    <p>Email:  ulac@ulacdigital.org</p>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="foal" class="card-body">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal3" title="Información aliado">
+                        <img class="img-fluid" th:src="@{/img/LogoFOAL.jpg}" th:alt="#{text.alia3-img}" width="350" height="225">
+                    </a>
+                    <div class="modal fade" id="myModal3">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.alia3}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <h2 th:text="#{text.alia3}"></h2>
+                                    <p style="text-align: justify" th:text="#{text.alia3-des}"></p>
+                                    <p th:inline="text">[[#{text.aliados-sitio-web}]] <a href="https://www.foal.es">foal.es</a> </p>
+                                    <p>Email: foaltec@once.es </p>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Segunda fila de cards-->
+        <div style="margin-top: 10px" class="card-deck">
+            <div class="card">
+                <div id="readis" class="card-body">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal5" title="Información aliado">
+                        <img class="img-fluid" th:src="@{/img/logoRIADIS.png}" th:alt="#{text.alia4-img}">
+                    </a>
+                    <div class="modal fade" id="myModal5">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.alia4}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <h2 th:text="#{text.alia4}"></h2>
+                                    <p style="text-align: justify" th:text="#{text.alia4-des}"></p>
+                                    <p th:inline="text">[[#{text.aliados-sitio-web}]] <a href="https://www.riadis.org">riadis.org</a> </p>
+                                    <p>Email: rosario.galarza@riadis.oer <br> proyectos.riadis@riadis.org</p>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" >
+                <div id="perkins" class="card-body">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal6" title="Información aliado">
+                        <img class="img-fluid" th:src="@{/img/LogoPerkins.png}" th:alt="#{text.alia5-img}">
+                    </a>
+                    <div class="modal fade" id="myModal6">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.alia5}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <h2 th:text="#{text.alia5}"></h2>
+                                    <p style="text-align: justify" th:text="#{text.alia5-des}"></p>
+                                    <p th:inline="text">[[#{text.aliados-sitio-web}]] <a href="http://perkinsla.org/es/index.php">perkinsla.org</a></p>
+                                    <p>Email: gloria.rodriguez@perkins.org</p>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div id="holandesa" class="card-body" style="text-align: center">
+                    <a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal4" title="Información aliado">
+                        <h1 style="margin-top: 22% ; margin-bottom: 22% ; margin-right: 18% ; margin-left: 18%" th:text="#{text.aliaotros}"></h1> </a>
+                    <div class="modal fade" id="myModal4">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" tabindex="0">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title" th:text="#{text.aliaotros}"></h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <h2 th:text="#{text.aliaotros}"></h2>
+                                    <h3 th:text="#{text.aliaotros-desc}"></h3>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{text.aliados-cerrar}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+
+</body>
+
+</html>

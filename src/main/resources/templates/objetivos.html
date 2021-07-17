@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+    </style>
+
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div tabindex="0" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 style="text-align: center" th:text="#{label.Objetivos}"></h2>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="text-align: center"><strong th:text="#{text.obj1}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.obj1-cont1}">
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p style="text-align: center"><strong th:text="#{text.obj2}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.obj2-cont1}"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="text-align: center"><strong th:text="#{text.obj3}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.obj3-cont1}"></p>
+                </div>
+                <div class="col-sm-6">
+                    <p style="text-align: center"><strong th:text="#{text.obj4}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.obj4-cont}"></p>
+                </div>
+            </div>
+            <img th:width="600px"  class="img-fluid mx-auto d-block rounded" th:src="@{/img/imagen_antecedentes.jpg}" alt="Fotografía ICEVI">
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

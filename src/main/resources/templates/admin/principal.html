@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div th:fragment="nav-bar-admin">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" th:href="@{/admin/principal}">I C E V I Administrador</a>
+    </nav>
+</div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-deck">
+                    <div id="cardRegistrar" class="card justify-content-center bg-light">
+                        <img class="card-img-top" th:src="@{/img/user.png}" style="width: 100%" alt="Icono de usuario"/>
+                        <div class="card-body">
+                            <a th:href="@{/admin/registrar}" class="btn btn-primary bg-dark">Registrar administrador</a>
+                        </div>
+                    </div>
+                    <div id="cardPublicaciones" class="card justify-content-center bg-light">
+                        <img class="card-img-top" th:src="@{/img/folder.png}" alt="Icono de publicación"/>
+                        <div class="card-body">
+                            <a th:href="@{/admin/publicaciones}" class="btn btn-primary bg-dark">Crear publicación</a>
+                        </div>
+                    </div>
+                    <div id="cardEditarPub" class="card justify-content-center bg-light">
+                        <img class="card-img-top" th:src="@{/img/edit.png}" alt="Icono de editar publicación"/>
+                        <div class="card-body">
+                            <a th:href="@{/admin/listarpublicaciones}" class="btn btn-primary bg-dark">Editar o borrar publicaciones</a>
+                        </div>
+                    </div>
+                    <div id="cardDelegadosP" class="card justify-content-center bg-light">
+                        <img class="card-img-top" th:src="@{/img/edit.png}" alt="Icono de editar delegados por país">
+                        <div class="card-body">
+                            <a th:href="@{/admin/paises}" class="btn btn-primary bg-dark">Editar delegados de países</a>
+                        </div>
+                    </div>
+                    <div id="cardDelegadosS" class="card justify-content-center bg-light">
+                        <img class="card-img-top" th:src="@{/img/edit.png}" alt="Icono de editar delegados por sub región">
+                        <div class="card-body">
+                            <a th:href="@{/admin/subregiones}" class="btn btn-primary bg-dark">Editar delegados de sub regiones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <a th:href="@{/logout}" class="btn btn-primary bg-dark"><i class="fas fa-arrow-left"></i>Cerrar sesión</a>
+        </div>
+    </div>
+</body>
+</html>

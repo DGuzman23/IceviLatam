@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar publicaciones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div th:fragment="nav-bar-admin">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" th:href="@{/admin/principal}">I C E V I Administrador</a>
+    </nav>
+</div>
+<div th:switch="${delegates.isEmpty()}" class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 th:case="true">No hay delegados aún</h2>
+            <div th:case="*">
+                <h2 class="my-5">Delegates</h2>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cargo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="del : ${delegates}">
+                        <td th:text="${del.name}"></td>
+                        <td th:text="${del.last}"></td>
+                        <td th:text="${del.charge}"></td>
+                        <td><a th:href="@{/admin/editardelegados/{subId}/{id}(subId = ${subId}, id = ${del.id})}"
+                               class="btn btn-primary bg-dark"><i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                <a th:href="@{/admin/principal}" class="btn btn-primary bg-dark">Regresar a página principal
+                    <i class="fas fa-arrow-left ml-4"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

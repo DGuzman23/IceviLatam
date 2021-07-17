@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar delegado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div th:fragment="nav-bar-admin">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" th:href="@{/admin/principal}">I C E V I Administrador</a>
+    </nav>
+</div>
+<div class="container my-5">
+    <h2 class="mb-5">Editar delegado</h2>
+    <div class="row">
+        <div class="registration-form">
+            <form class="justify-content-center" th:object="${delegate}" th:action="@{/admin/actualizardelegado/{cId}/{dId}(cId = ${cId}, dId = ${delegate.id})}" method="POST">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="name" class="col-form-label">Nombre:</label>
+                        <input id="name" class="form-control" type="text" th:field="*{name}" placeholder="Nombres">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="last" class="col-form-label">Apellidos:</label>
+                        <input id="last" class="form-control" type="text" th:field="*{last}" placeholder="Apellidos">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="charge" class="col-form-label">Cargo:</label>
+                        <select id="charge" class="form-control" th:field="*{charge}">
+                            <option th:value="Titulares" th:text="Titulares"></option>
+                            <option th:value="Suplentes" th:text="Suplentes"></option>
+                        </select>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="form-group col-md-6 mt-5">
+                        <input class="btn btn-primary bg-dark" type="submit" value="Actualizar delegado" >
+                    </div>
+                </div>
+                <input type="hidden" th:field="*{area}" value="true">
+                <span th:utext="${successMessage}"></span>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <p>
+            <a th:href="@{/admin/principal}" class="btn btn-primary bg-dark">Regresar a página principal
+                <i class="fas fa-arrow-left ml-4"></i>
+            </a>
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

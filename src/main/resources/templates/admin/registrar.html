@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar administrador</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div th:fragment="nav-bar-admin">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" th:href="@{/admin/principal}">I C E V I Administrador</a>
+    </nav>
+</div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="registration-form">
+                <form th:action="@{/admin/registrar}" th:object="${user}" method="POST">
+                    <div class="form-group">
+                        <label for="nameInput">Nombre</label>
+                        <input class="form-control" id="nameInput" type="text" th:field="*{name}" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastNameInput">Apellido</label>
+                        <input class="form-control" id="lastNameInput" type="text" th:field="*{last_name}" placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="usernameInput">Nombre de usuario</label>
+                        <input class="form-control" id="usernameInput" type="text" th:field="*{username}" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordInput">Contraseña</label>
+                        <input class="form-control" id="passwordInput" type="text" th:field="*{password}" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary bg-dark" type="submit" value="Registrar usuario" >
+                        <span th:utext="${successMessage}"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                <a th:href="@{/admin/principal}" class="btn btn-primary bg-dark">Regresar a página principal
+                    <i class="fas fa-arrow-left ml-4"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

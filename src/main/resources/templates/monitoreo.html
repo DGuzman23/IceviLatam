@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .containerRecurso {
+            position: relative;
+            width: 100%;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .containerRecurso:hover .image {
+            opacity: 0.3;
+        }
+
+        .containerRecurso:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            color: black;
+            font-size: 16px;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div id="monitoreoCont" tabindex="0" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 th:text="#{label.Monitoreo}"></h2>
+            <p style="text-align: justify;" th:text="#{text.monitoreo1}">
+                <ul>
+                    <li style="text-align: justify;" th:text="#{text.monitoreo2}"></li>
+                    <li style="text-align: justify;" th:text="#{text.monitoreo3}"></li>
+                    <li style="text-align: justify;" th:text="#{text.monitoreo4}"></li>
+                </ul>
+            </p>
+            <p style="text-align: justify" th:text="#{text.monitoreo5}">
+            </p>
+            <h3 th:text="#{text.monitoreosub1}"></h3>
+            <p style="text-align: justify" th:text="#{text.monitoreo6}">
+            </p>
+            <p style="text-align: justify" th:text="#{text.aspectos}">
+                 <ul>
+                    <li th:text="#{text.aspecto1}"> </li>
+                    <li th:text="#{text.aspecto2}"> </li>
+                    <li th:text="#{text.aspecto3}"> </li>
+                    <li th:text="#{text.aspecto4}"> </li>
+                    <li th:text="#{text.aspecto5}"> </li>
+                </ul>
+            </p>
+            <h3 th:text="#{text.monitoreosub2}"></h3>
+            <p style="text-align: justify" th:text="#{text.monitoreo7}">
+            </p>
+            <p style="text-align: justify"  th:text="#{text.monitoreo8}">
+            </p>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <!-- <h4>Subregión México</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/subregionmexico.png}" th:alt="#{text.subregionmexico}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+
+                                <div class="btn-group">
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal1" th:text="#{text.vistaprevia}"></button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal1" role="dialog">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" th:text="#{text.vistaprevia}"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe  class="responsive-iframe"  width="100%" height="700" src="https://docs.google.com/document/d/e/2PACX-1vSy1xjZLvBoryQFdDoWUKaAxJRelF9kAvP6Qmw9J6R0MKkJAsydoRSAiVtCKPeYgA/pub?embedded=true"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{text.cerrar}"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-info btn-sm"th:text="#{text.verdrive}"  href="https://docs.google.com/document/d/e/2PACX-1vSy1xjZLvBoryQFdDoWUKaAxJRelF9kAvP6Qmw9J6R0MKkJAsydoRSAiVtCKPeYgA/pub" title="Informe monitoreo subregión México en Drive"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <!-- <h4>Subregión Cono Sur</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/subregionconosur.png}" th:alt="#{text.subregionconosur}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                                <div class="btn-group">
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal2" th:text="#{text.vistaprevia}"></button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal2" role="dialog">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" th:text="#{text.vistaprevia}"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe  class="responsive-iframe"  width="100%" height="700" src="https://docs.google.com/document/d/e/2PACX-1vQerFBnkPEe_gGkobu02N4bF00nWBVkytGG4r1GPhuIPfuShNA24m4T9qiUdzPn0w/pub?embedded=true"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{text.cerrar}"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-info btn-sm" th:text="#{text.verdrive}" href="https://docs.google.com/document/d/e/2PACX-1vQerFBnkPEe_gGkobu02N4bF00nWBVkytGG4r1GPhuIPfuShNA24m4T9qiUdzPn0w/pub" title="Informe monitoreo subregión Cono Sur en Drive"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <!-- <h4>Subregión Brasil</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/subregionbrasil.png}" th:alt="#{text.subregionbrasil}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                                <div class="btn-group">
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal3" th:text="#{text.vistaprevia}"></button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal3" role="dialog">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" th:text="#{text.vistaprevia}"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe  class="responsive-iframe"  width="100%" height="700" src="https://docs.google.com/document/d/e/2PACX-1vTg9NWsrp7Y4EFRiyYG7-eGwcbjdc3WkUtV5khtCi2B2tZp3td3w98TgoAv8wPcUw/pub?embedded=true"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{text.cerrar}"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-info btn-sm" th:text="#{text.verdrive}" href="https://docs.google.com/document/d/e/2PACX-1vTg9NWsrp7Y4EFRiyYG7-eGwcbjdc3WkUtV5khtCi2B2tZp3td3w98TgoAv8wPcUw/pub" title="Informe monitoreo Subregión Brasil"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body text-center">
+                       <!--  <h4>Subregión Andina</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/subregionandina.png}" th:alt="#{text.subregionandina}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                                <div class="btn-group">
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal4" th:text="#{text.vistaprevia}"></button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal4" role="dialog">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" th:text="#{text.vistaprevia}"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe  class="responsive-iframe"  width="100%" height="700" src="https://docs.google.com/document/d/e/2PACX-1vQiHQngewHx3A26eWNVoKXO1RuX45D19aPybhl5VNbei-RMgsjEgH1MkkcFWDfQDQ/pub?embedded=true"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{text.cerrar}"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-info btn-sm" th:text="#{text.verdrive}" href="https://docs.google.com/document/d/e/2PACX-1vQiHQngewHx3A26eWNVoKXO1RuX45D19aPybhl5VNbei-RMgsjEgH1MkkcFWDfQDQ/pub" title="Informe Monitoreo subregión Andina en Drive"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <!--<h4>Subregión Centromérica y Caribe</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/subregioncaycaribe.png}" th:alt="#{text.subregioncentro}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                                <div class="btn-group">
+                                    <!-- Trigger the modal with a button -->
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal5" th:text="#{text.vistaprevia}"></button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal5" role="dialog">
+                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" th:text="#{text.vistaprevia}"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe  class="responsive-iframe"  width="100%" height="700" src="https://docs.google.com/document/d/e/2PACX-1vSN6knuIXGlnyZhyagDRwTYkMyd3pujOPPvn6p8ss_kz3vGV4EiT0D7P6dyp5DmuA/pub?embedded=true"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{text.cerrar}"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-info btn-sm" th:text="#{text.verdrive}" href="https://docs.google.com/document/d/e/2PACX-1vSN6knuIXGlnyZhyagDRwTYkMyd3pujOPPvn6p8ss_kz3vGV4EiT0D7P6dyp5DmuA/pub" title="Informe Monitoreo Centroamerica y Caribe en Drive"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <!-- <h4>Latinoamérica</h4>-->
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/latinoamerica.png}" th:alt="#{text.region}" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                            <div class="middle">
+                               <!-- <div class="btn-group">
+                                    <a class="btn btn-light">Vista previa</a>
+                                    <a class="btn btn-info btn-sm" href="https://drive.google.com/drive/folders/1UeUTSAyE6qPFRQgQfKKOGL_sRz8-jJFb?usp=sharing" title="Biblioteca en Drive">Ver en Drive
+                                    </a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

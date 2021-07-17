@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div id="estructura-div" tabindex="0" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 th:text="#{label.Estructura}"></h2>
+            <div class="row">
+                <div class="col-sm-8">
+                    <p style="text-align: justify;" th:text="#{text.estruct1}">
+                    <ol>
+                        <li th:text="#{text.estruct-reg1}"></li>
+                        <li th:text="#{text.estruct-reg2}"></li>
+                        <li th:text="#{text.estruct-reg3}"></li>
+                        <li th:text="#{text.estruct-reg4}"></li>
+                        <li th:text="#{text.estruct-reg5}"></li>
+                    </ol>
+                    </p></div>
+                <div class="col-sm-4">
+                    <img th:width="300px"  class="img-fluid rounded" th:src="@{/img/Frances-Mani.jpg}" th:alt="#{text.img.Estructura}">
+                </div>
+            </div>
+            <p style="text-align: justify;" th:text="#{text.estruct2}"></p>
+            <p style="text-align: justify;" th:text="#{text.estruct3}">
+                <ul>
+                    <li th:text="#{text.estruct-auth1}"></li>
+                    <li th:text="#{text.estruct-auth2}"></li>
+                    <li th:text="#{text.estruct-auth3}"></li>
+                    <li th:text="#{text.estruct-auth4}"></li>
+                </ul>
+            </p>
+            <table id="table-estruct" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th th:text="#{text.estruct-table1}"></th>
+                        <th th:text="#{text.estruct-table2}"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td th:text="#{text.estruct-table-auth1}"></td>
+                        <td>
+                            <ul>
+                                <li th:text="#{text.estruct-table-auth1-cont1}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont2}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont3}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont4}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont5}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont6}"></li>
+                                <li th:text="#{text.estruct-table-auth1-cont7}"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td th:text="#{text.estruct-table-auth2}"></td>
+                        <td>
+                            <ul>
+                                <li th:text="#{text.estruct-table-auth2-cont1}"></li>
+                                <li th:text="#{text.estruct-table-auth2-cont2}"></li>
+                                <li th:text="#{text.estruct-table-auth2-cont3}"></li>
+                                <li th:text="#{text.estruct-table-auth2-cont4}"></li>
+                                <li th:text="#{text.estruct-table-auth2-cont5}"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td th:text="#{text.estruct-table-auth3}"></td>
+                        <td>
+                            <ul>
+                                <li th:text="#{text.estruct-table-auth3-cont1}"></li>
+                                <li th:text="#{text.estruct-table-auth3-cont2}"></li>
+                                <li th:text="#{text.estruct-table-auth3-cont3}"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

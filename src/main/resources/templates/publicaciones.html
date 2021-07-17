@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div class="container" style="margin-top:30px" th:switch="${publications.isEmpty()}">
+    <div class="row">
+        <h2 th:case="true">No hay publicaciones aún</h2>
+        <div id="containerCards" th:case="*" class="col-sm-12">
+            <h1>Publicaciones</h1>
+                <div id="card-publications" style="margin-top: 25px;" class="card" th:each="p : ${publications}">
+                    <div id="card-publications-2" class="card-body text-center">
+                        <h3 class="card-title" th:text="${p.title}"></h3>
+                        <p class="card-text" th:text="${p.description}">Some text inside the first card</p>
+                        <div class="btn-group">
+                            <!--<a href="#" class="btn btn-light" data-toggle="modal" data-target="#myModal">Vista previa</a>
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" th:text="'Vista previa ' + ${p.title}"></h3>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+
+                                        <div class="modal-body">
+                                            <iframe th:src="${p.link} + '?embedded=true'" width="90%" height="700">
+                                                <p>Su navegador no soporta vista previa del archivo, pero puede acceder a él desde Google Drive, en
+                                                    <a th:href="${p.link}" th:text="${p.title}"></a>.
+                                                </p>
+                                            </iframe>
+                                        </div>
+
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>-->
+                            <a th:href="${p.link}" class="btn btn-light">Ver en Google Drive</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

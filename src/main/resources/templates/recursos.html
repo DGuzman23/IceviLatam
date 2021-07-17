@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .containerRecurso {
+            position: relative;
+            width: 100%;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .containerRecurso:hover .image {
+            opacity: 0.3;
+        }
+
+        .containerRecurso:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            color: black;
+            font-size: 16px;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div tabindex="0" class="container">
+    <div class="row">
+        <div id="container-recursos" class="col-sm-12">
+            <h1 th:text="#{label.Recursos}"></h1>
+            <div id="afiliate-ad" class="alert alert-success">
+                <strong th:text="#{text.recursos1}"></strong>
+                <p style="text-align: justify" th:inline="text">[[#{text.recursos2}]] <a href="afiliate" th:text="#{text.link-afiliate}"></a></p>
+            </div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/biblioteca.png}" alt="Imagen biblioteca" class="image" style="width:100%">
+                            <!--<p class="text">Biblioteca</p>-->
+                            <div class="middle">
+                                <a href="https://drive.google.com/drive/folders/1qsazLr2W6Kl0bXOSbtMnz-9igxLRZjY5?usp=sharing" title="Biblioteca en Drive">
+                                    <img th:src="@{/img/logodrive.png}" alt="Imagen logo Drive" class="image" style="width:100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/software.png}" alt="Imagen software" class="image" style="width:100%">
+                            <div class="middle">
+                                <a href="https://drive.google.com/drive/folders/1g3tu0ZIRmtp9Lz--2mw2FWaWYlw_I25t?usp=sharing" title="software en Drive">
+                                    <img th:src="@{/img/logodrive.png}" alt="Imagen logo Drive" class="image" style="width:100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/audioteca.png}" alt="Imagen audioteca" class="image" style="width:100%">
+                            <div class="middle">
+                                <a href="https://drive.google.com/drive/folders/1tD_p7HPmfW6HrGDXP0bv20bTO2MXxV9R?usp=sharing" title="audioteca en Drive">
+                                    <img th:src="@{/img/logodrive.png}" alt="Imagen logo Drive" class="image" style="width:100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="containerRecurso">
+                            <img th:src="@{/img/videoteca.png}" alt="Imagen videoteca" class="image" style="width:100%">
+                            <div class="middle">
+                                <a href="https://drive.google.com/drive/folders/1YX5kFup1L9cIxVH7zjacBdNayPEzwRZa?usp=sharing" title="videoteca en Drive">
+                                    <img th:src="@{/img/logodrive.png}" alt="Imagen logo Drive" class="image" style="width:100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+
+</body>
+</html>

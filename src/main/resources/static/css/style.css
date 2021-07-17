@@ -1,0 +1,207 @@
+html {
+    --font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: var(--font-size);
+}
+
+body.light {
+    --background: #ffffff;
+    --body-text: black;
+    --header-background: white;
+    --header-decoration: #005005;
+    --nav: #60ad5e;
+    --nav-text: black;
+    --dropdown-menu: #2e7d32;
+    --dropdown-divider-text: black;
+    --dropdown-header-text: black;
+    --dropdown-menu-text: black;
+    --delegates-text: black;
+    --values: #60ad5e;
+    --allies: #60ad5e;
+    --footer: #005005;
+    --footer-text: white;
+    --table-struct-text: black;
+    --verDel: black;
+    --afiliate-ad-background: #60ad5e;
+    --card-publication-background: #60ad5e;
+    --button-delegates-background: #005005;
+    --button-delegates-text: white;
+}
+
+body.high {
+    --background: #27143C;
+    --body-text: white;
+    --header-background: #27143C;
+    --header-decoration: #FFF7FE;
+    --nav: #FDE0FD;
+    --nav-text: black;
+    --dropdown-menu: #FDE0FD;
+    --dropdown-divider-text: black;
+    --dropdown-header-text: black;
+    --dropdown-menu-text: black;
+    --delegates-text: black;
+    --values: #F1AFF2;
+    --allies: #F1AFF2;
+    --footer: #FFF7FE;
+    --footer-text: black;
+    --table-struct-text: white;
+    --verDel: white;
+    --afiliate-ad-background: #F1AFF2;
+    --card-publication-background: #F1AFF2;
+    --button-delegates-background: #FFF7FE;
+    --button-delegates-text: black;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background);
+    font-family: 'Roboto', sans-serif;
+    color: var(--body-text);
+}
+
+#header {
+    background: var(--header-background);
+}
+
+#header-decoration {
+    min-height: 2vh;
+    background: var(--header-decoration);
+}
+
+#header-img {
+    width: 155px;
+    height: 85px;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+nav {
+    background: var(--nav);
+    color: var(--nav-text);
+    font-weight: bold;
+}
+
+nav a, nav li {
+    color: var(--nav-text);
+    text-decoration-style: solid;
+}
+
+#navbar-options {
+    padding-left: 10%;
+    padding-right: 10%;
+    white-space:nowrap;
+}
+
+.dropdown-menu {
+    background: var(--dropdown-menu);
+    border: none;
+}
+
+.dropdown-divider {
+    background: var(--dropdown-divider-text);
+    border: 1px solid;
+}
+
+.dropdown-header {
+    color: var(--dropdown-header-text);
+}
+
+.dropdown-menu > a{
+    color: var(--dropdown-menu-text);
+    font-weight: bold;
+}
+
+nav > li > a:hover{
+    transition: ease-in 250ms;
+}
+
+.container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#lang-es, #lang-en {
+    font-weight: bold;
+}
+
+.card-body {
+    border-radius: 10px;
+    border-style: none;
+}
+
+#vSubD, #vPaiD {
+    color: var(--verDel);
+}
+
+#colaboracion, #compromiso, #igualdad, #responsabilidad, #solidaridad, #transparencia, #etica, #calidad, #equidad, #profesionalismo {
+    background: var(--values);
+}
+
+#icevig, #foal, #ulac, #holandesa, #readis, #perkins {
+    background: var(--allies);
+}
+
+#estructura-div {
+    margin-top: 5%;
+}
+
+.page-footer {
+    max-height: 10vh;
+}
+
+#footer, #footerc {
+    background: var(--footer);
+    color: var(--footer-text);
+}
+
+footer > div.jumbotron > div > a > button {
+    color: var(--footer-text);
+    box-shadow: none;
+}
+
+#table-estruct, #table-dels, #table-deln, #table-vDelnT, #table-vDelnS, #table-vDelsT, #table-vDelsS {
+    color: var(--table-struct-text);
+}
+
+#table-dels > td, #table-deln > td {
+    justify-content: flex-end;
+}
+
+#afiliate-ad {
+    background: var(--afiliate-ad-background);
+}
+
+#card-publications-2 {
+    background: var(--card-publication-background);
+    color: var(--dropdown-menu-text);
+}
+
+#button-delegates-n, #button-delegates-s {
+    background: var(--button-delegates-background);
+    color: var(--button-delegates-text);
+}
+
+#card-publications {
+    background: var(--card-publication-background);
+    color: var(--dropdown-menu-text);
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 80%;
+}
+
+#containerCards{
+    padding-left: 0%;
+    padding-right: 5%;
+}
+
+#correoInfo {
+    color: white;
+    font-weight: bold;
+}

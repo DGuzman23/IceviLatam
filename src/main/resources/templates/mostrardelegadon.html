@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div class="container" th:switch="${delegates.isEmpty()}">
+    <div class="row">
+        <h2 th:case="true" th:text="#{text.nodelegados}"></h2>
+        <div th:case="*" class="col-sm-12">
+            <h1 th:text="'Delegados titulares de ' + ${country.name}"></h1>
+            <table id="table-vDelnT" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each = "del : ${delegatesT}">
+                    <td th:text="${del.name}"></td>
+                    <td th:text="${del.last}"></td>
+                    <td th:text="${del.charge}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <h1 th:text="'Delegados suplentes de ' + ${country.name}"></h1>
+            <table id="table-vDelnS" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each = "del : ${delegatesS}">
+                    <td th:text="${del.name}"></td>
+                    <td th:text="${del.last}"></td>
+                    <td th:text="${del.charge}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <a th:text="#{text.regresarNacionales}" id="button-delegates-n" th:href="@{/delegadosnacionales}" class="btn"><i class="fas fa-arrow-left"></i></a>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>

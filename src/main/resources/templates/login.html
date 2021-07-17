@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div th:fragment="nav-bar-admin">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" th:href="@{/admin/principal}">I C E V I Administrador</a>
+    </nav>
+</div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="registration-form">
+                <form class="justify-content-center" th:action="@{/login}" method="POST">
+                    <div class="form-group">
+                        <label for="usernameInput">Nombre de usuario</label>
+                        <input class="form-control" id="usernameInput" type="text" name="username" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordInput">Contraseña</label>
+                        <input class="form-control" id="passwordInput" type="password" name="password" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary bg-dark" type="submit" value="Ingresar">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                <a href="/" class="btn btn-primary bg-dark">Regresar a página principal
+                    <i class="fas fa-arrow-left ml-4"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

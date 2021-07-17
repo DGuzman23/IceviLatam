@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ICEVI Latinoamerica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:insert="fragmentos :: header"></div>
+<div th:insert="fragmentos :: nav-menu"></div>
+
+<div tabindex="0" class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 th:text="#{label.quienesSomos}"></h1>
+            <p style="text-align:justify;" th:text="#{text.quienesSomos1}"></p>
+            <p style="text-align: justify" th:text="#{text.quienesSomos2}"></p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="text-align: center"> <strong th:text="#{text.misionLabel}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.mision}"></p>
+                </div>
+                <div class="col-sm-6">
+                    <p style="text-align: center"><strong th:text="#{text.visionLabel}"></strong></p>
+                    <p style="text-align: justify;" th:text="#{text.vision}"></p>
+                </div>
+            </div>
+            <p style="text-align: center"><strong th:text="#{text.valores}"></strong></p>
+            <div style="margin-bottom: 10px" class="card-deck">
+                <div id="colaboracion" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.colaboracion}"></p>
+                    </div>
+                </div>
+                <div id="compromiso" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.compromiso}"></p>
+                    </div>
+                </div>
+                <div id="igualdad" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.igualdad}"></p>
+                    </div>
+                </div>
+                <div id="responsabilidad" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.responsabilidad}"></p>
+                    </div>
+                </div>
+                <div id="solidaridad" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.solidaridad}"></p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px" class="card-deck">
+                <div id="transparencia" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.transparencia}"></p>
+                    </div>
+                </div>
+                <div id="etica" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.etica}"></p>
+                    </div>
+                </div>
+                <div id="calidad" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.calidad}"></p>
+                    </div>
+                </div>
+                <div id="equidad" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.equidad}">Equidad</p>
+                    </div>
+                </div>
+                <div id="profesionalismo" class="card">
+                    <div class="card-body text-center">
+                        <p class="card-text" th:text="#{text.profesionalismo}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragmentos :: footer"></div>
+</body>
+</html>
