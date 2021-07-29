@@ -79,7 +79,7 @@ public class AdminController {
 
     @PostMapping("/admin/publicaciones")
     public ModelAndView createPublication(@Valid Publication publication, BindingResult bindingResult,
-                                          ModelMap modelMap) {
+                                        ModelMap modelMap) {
         ModelAndView mav = new ModelAndView();
         if (bindingResult.hasErrors()){
             System.out.println(bindingResult.getAllErrors().toString());
@@ -118,7 +118,7 @@ public class AdminController {
 
     @PostMapping("/admin/actualizarpublicacion/{id}")
     public ModelAndView actualizarPublication(@PathVariable("id") int id, @Valid Publication publication,
-                                              BindingResult bindingResult, ModelMap modelMap){
+                                            BindingResult bindingResult, ModelMap modelMap){
         ModelAndView mav = new ModelAndView();
         publication.setId(id);
         if (bindingResult.hasErrors()) {
@@ -214,7 +214,7 @@ public class AdminController {
 
     @PostMapping("/admin/actualizardelegado/{id}/{dId}")
     public ModelAndView updateDelegate(@PathVariable("id") int id, @PathVariable ("dId") int dId,
-                                       @Valid Delegates delegate, BindingResult bindingResult, ModelMap modelMap){
+                                        @Valid Delegates delegate, BindingResult bindingResult, ModelMap modelMap){
         ModelAndView mav = new ModelAndView();
         delegate.setId(dId);
         System.out.println(delegate.isArea());
